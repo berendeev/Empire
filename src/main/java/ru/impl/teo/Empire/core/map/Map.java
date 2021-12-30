@@ -4,11 +4,7 @@ import ru.impl.teo.Empire.core.timer.Timer;
 
 import java.util.List;
 
-public class Map implements Timer {
-    private List<Territory> territories;
+public abstract class Map implements Timer {
 
-    @Override
-    public void onTick() {
-        //TODO
-    }
+    private List<Territory> territories;
 }
