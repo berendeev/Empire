@@ -30,7 +30,14 @@ public abstract class Unit implements Timer {
     @Override
     public void onTick() {
         if (Objects.nonNull(order)) {
-            order.executeOrder(this);
+            order.execute(this);
         }
+    }
+
+    public void destroy() {
+        owner = null;
+
+        currentPosition.removeUnit(this);
+        currentPosition = null;
     }
 }

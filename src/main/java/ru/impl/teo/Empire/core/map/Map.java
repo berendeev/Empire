@@ -6,5 +6,9 @@ import java.util.List;
 
 public abstract class Map implements Timer {
 
-    private List<Territory> territories;
+    protected final List<Territory> territories;
+
+    protected Map(List<Territory> territories) {
+        this.territories = territories;
+    }
 }
