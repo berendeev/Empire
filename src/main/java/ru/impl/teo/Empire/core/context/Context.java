@@ -1,16 +1,29 @@
 package ru.impl.teo.Empire.core.context;
 
+import lombok.Getter;
+import lombok.Setter;
 import ru.impl.teo.Empire.core.map.Map;
-import ru.impl.teo.Empire.core.player.Player;
+import ru.impl.teo.Empire.core.player.Country;
 
 import java.util.List;
 
-public class Context {
+public enum Context {
 
-    public static List<Player> players;
+    INSTANCE;
 
-    public static Player currentPlayer;
 
-    public static Map map;
+    @Getter
+    @Setter
+    public List<Country> players;
+
+    @Getter
+    @Setter
+    public Country currentPlayer;
+
+    @Getter
+    @Setter
+    public Map map;
+
+
 
 }

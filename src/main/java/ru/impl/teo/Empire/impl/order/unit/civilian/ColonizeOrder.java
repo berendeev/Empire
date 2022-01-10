@@ -2,7 +2,7 @@ package ru.impl.teo.Empire.impl.order.unit.civilian;
 
 import ru.impl.teo.Empire.core.map.Territory;
 import ru.impl.teo.Empire.core.order.UnitOrder;
-import ru.impl.teo.Empire.core.player.Player;
+import ru.impl.teo.Empire.core.player.Country;
 import ru.impl.teo.Empire.core.unit.Unit;
 import ru.impl.teo.Empire.impl.unit.civilian.Colonist;
 
@@ -33,7 +33,7 @@ public class ColonizeOrder extends UnitOrder {
     protected void colonizeTerritory(Unit unit){
         Territory territory = unit.getCurrentPosition();
 
-        Player owner = unit.getOwner();
+        Country owner = unit.getOwner();
         territory.setOwner(owner);
 
         unit.destroy();

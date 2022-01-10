@@ -2,7 +2,7 @@ package ru.impl.teo.Empire.core.map;
 
 import lombok.Getter;
 import lombok.Setter;
-import ru.impl.teo.Empire.core.player.Player;
+import ru.impl.teo.Empire.core.player.Country;
 import ru.impl.teo.Empire.core.timer.Timer;
 import ru.impl.teo.Empire.core.unit.Unit;
 
@@ -17,7 +17,7 @@ public abstract class Territory implements Timer {
 
     private List<Territory> connectedTerritories = new ArrayList<>();
 
-    private Player owner;
+    private Country owner;
 
     //TODO: buildings + cities
 

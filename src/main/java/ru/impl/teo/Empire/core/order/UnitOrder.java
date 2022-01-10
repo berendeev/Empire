@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 @Setter
 public abstract class UnitOrder extends Order<Unit> {
     private static final List<Function<Unit, Boolean>> orderExecutionPossibilities = List.of(
-            (unit)-> Context.currentPlayer == unit.getOwner()
+            (unit) -> Context.INSTANCE.currentPlayer == unit.getOwner()
     );
 
     public UnitOrder(List<Function<Unit, Boolean>> orderExecutionPossibilities) {

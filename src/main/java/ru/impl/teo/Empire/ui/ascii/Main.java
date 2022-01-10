@@ -1,33 +1,40 @@
-package ru.impl.teo.Empire;
+package ru.impl.teo.Empire.ui.ascii;
 
 import ru.impl.teo.Empire.core.context.Context;
 import ru.impl.teo.Empire.core.map.Map;
 import ru.impl.teo.Empire.core.map.Territory;
-import ru.impl.teo.Empire.core.player.Player;
+import ru.impl.teo.Empire.core.player.Country;
 import ru.impl.teo.Empire.impl.map.DefaultMap;
 import ru.impl.teo.Empire.impl.map.territory.Empty;
+import ru.impl.teo.Empire.impl.player.DefaultCountry;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        initializeMap();
+        Map map = initializeMap();
 
-        initializePlays();
+        Country country = initializePlays();
 
+        map.getTerritories().get(0).setOwner(country);
+
+        Context context = Context.INSTANCE;
+        context.setMap(map);
+        context.setPlayers(List.of(country));
+
+        MapPrinter mapPrinter = new MapPrinter(context);
+        mapPrinter.print();
     }
 
-    private static void initializePlays() {
-
+    private static Country initializePlays() {
+        return new DefaultCountry();
     }
 
     private static Map initializeMap() {
 
         List<Territory> territories = initializeTerritories();
         DefaultMap defaultMap = new DefaultMap(territories);
-
-        Context.map = defaultMap;
 
         return defaultMap;
     }
